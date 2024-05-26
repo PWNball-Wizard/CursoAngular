@@ -3,20 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CounterModule } from './counter/components/counter.module';
-import { HeroesModule } from './heroes/heroes.module';
-import { DbzModule } from './dbz/dbz.module';
+import { GifsModule } from './gifs/gifs.module';
+import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CounterModule,
-    HeroesModule,
-    DbzModule
+    GifsModule,
+    SharedModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
