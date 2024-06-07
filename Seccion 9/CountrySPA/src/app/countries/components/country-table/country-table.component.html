@@ -1,0 +1,32 @@
+<div *ngIf="capitals.length == 0; else table" class="alert alert-warning text-center">
+    No hay paises que mostrar
+</div>
+
+<ng-template #table>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Capital</th>
+                <th>Población</th>
+                <th>Bandera</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let capital of capitals; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{capital.name.official}}</td>
+                <td>{{capital.capital}}</td>
+                <td>{{capital.population | number}}</td>
+                <td>
+                    <img [src]="capital.flags.png" alt="{{capital.name.official}}" style="width: 50px;">
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="redirecciona(capital.cca3)">Ver</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>
