@@ -1,0 +1,61 @@
+<ng-template #espera>
+    <div class="alert alert-info">
+        Espere porfavor
+    </div>
+</ng-template>
+
+
+<div *ngIf="capitals;else espera">
+    <div class="row">
+        <div class="col-12">
+            <h2>Pais: <strong>{{capitals.name.common}}</strong></h2>
+            <hr>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <h3>Bandera</h3>
+            <img src="{{capitals.flags.png}}" alt="{{capitals.name.common}}" style="width: 50px;">
+            <hr>
+            <h3>Escudo</h3>
+            <img src="{{capitals.coatOfArms.png}}" alt="{{capitals.name.common}}" style="width: 50px;">
+        </div>
+        <div class="col">
+            <h3>Informacion</h3>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Poblacion</strong>
+                {{capitals.population | number}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Capital</strong>
+                {{capitals.capital}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Region</strong>
+                {{capitals.region}}
+                </li>
+                <li class="list-group-item">
+                    <strong>Area</strong>
+                {{capitals.area | number}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col">
+            <h3>Traducciones</h3>
+            <div class="d-flex flex-wrap">
+                <span class="badge bg-primary m-1">{{capitals.translations['spa'].common}}</span>
+                <span class="badge bg-primary m-1">{{capitals.translations['bre'].common}}</span>
+                <span class="badge bg-primary m-1">{{capitals.translations['ces'].common}}</span>
+                <span class="badge bg-primary m-1">{{capitals.translations['deu'].common}}</span>
+                <span class="badge bg-primary m-1">{{capitals.translations['cym'].common}}</span>
+                <span class="badge bg-primary m-1">{{capitals.translations['ita'].common}}</span>
+                <span class="badge bg-primary m-1">{{capitals.translations['jpn'].common}}</span>
+                <span class="badge bg-primary m-1">{{capitals.translations['kor'].common}}</span>
+            </div>
+        </div>
+    </div>
+</div>
