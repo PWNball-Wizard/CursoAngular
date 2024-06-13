@@ -72,4 +72,5 @@ export class CountriesService {
   }
 
   constructor(private http: HttpClient) { this.loadToLocalStorage() }
+
 }
